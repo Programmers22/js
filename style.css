@@ -1,0 +1,14 @@
+#formularz{
+    background-color: lightblue;
+    width: 320px;
+    padding: 15px;
+}
+
+
+#wynik{
+    background-color: orange;
+    text-align: center;
+    width: 320px;
+    padding: 25px 15px;
+    display: none;
+}
