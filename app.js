@@ -10,7 +10,4 @@ function przelicz(){
     
 };
 
-window.addEventListener('contextmenu', function (e) { 
-    // do something here... 
-    e.preventDefault(); 
-  }, false);
+document.addEventListener('contextmenu', event => event.preventDefault());
