@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        #formularz{
+            background-color: rgb(167, 214, 230);
+            width: 320px;
+            padding: 15px;
+        }
+        
+        #wynik{
+            background-color: rgb(152, 15, 152);
+            text-align: center;
+            width: 320px;
+            padding: 25px 15px;
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div id="formularz">
@@ -9,15 +23,15 @@
             <table>
                 <tr>
                     <td>Podaj liczbe doroslych:</td>
-                    <td><input type="number" id="d1"></td>
+                    <td><input type="text" id="d1"></td>
                 </tr>
                 <tr>
                     <td>Podaj liczbe dzieci:</td>
-                    <td><input type="number" id="d2"></td>
+                    <td><input type="text" id="d2"></td>
                 </tr>
                 <tr>
                     <td>Podaj liczbe dni:</td>
-                    <td><input type="number" id="d3"></td>
+                    <td><input type="text" id="d3"></td>
                 </tr>
                 <tr>
                     <td colspan="2" align="right">
@@ -28,7 +42,18 @@
         </form>
     </div>  
     <div id="wynik"></div>
-    <script src="app.js"></script>
+    <script>
+        function przelicz(){
+            var dor = document.getElementById("d1").value;
+            var dz = document.getElementById("d2").value;
+            var dni = document.getElementById("d3").value;
+            if(!isNaN(dor) && !isNaN(dz) && !isNaN(dni) && dor != "" && dz != "" && dni != ""){
+                var koszt = (dor*35+dz*25)*dni;
+                document.getElementById("wynik").innerHTML ="Dokonales rezerwacji na "+dni+" dni <br> dla "+dor+" doroslych i "+dz+" dzieci.<br>Koszt calkowity noclegow wynosi "+koszt+"zl.";
+                document.getElementById("wynik").style.display = "block";
+            }
+            
+        };
+    </script>
 </body>
-
 </html>
